@@ -29,6 +29,6 @@ jobs:
       run: dotnet test --configuration Release --no-build --verbosity normal
 
     # Опціонально:
-    - name: Run application (optional)
+    # - name: Run application (optional)
 
-      run: dotnet run --project CalculatorMVC/CalculatorMVC.csproj --configuration Release
+    #   run: dotnet run --project CalculatorMVC/CalculatorMVC.csproj --configuration Release
