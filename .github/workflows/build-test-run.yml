@@ -30,4 +30,5 @@ jobs:
 
     # Опціонально:
     - name: Run application (optional)
+
       run: dotnet run --project CalculatorMVC/CalculatorMVC.csproj --configuration Release
