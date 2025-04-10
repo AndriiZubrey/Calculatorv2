@@ -34,5 +34,5 @@ jobs:
     # Якщо вам потрібно лише перевірити компіляцію і тестування, то крок запуску додатку можна
     # не включати або викликати його в спеціальному режимі.
     - name: Run application (optional)
-      run: dotnet run --project CalculatorMVC/CalculatorMVC.csproj --configuration Release
+      run: dotnet run --project Calculatorv2/CalculatorMVC.csproj --configuration Release
       # За замовчуванням цей крок може "зависнути", оскільки GUI додатку не відображається.
