@@ -1,4 +1,4 @@
-name: Build, Test and Run Calculator
+﻿name: Build, Test and Run Calculator
 
 on:
   push:
@@ -28,7 +28,6 @@ jobs:
     - name: Run tests
       run: dotnet test --configuration Release --no-build --verbosity normal
 
-    # Опціонально:
+    #   Опціонально:
     # - name: Run application (optional)
-
     #   run: dotnet run --project CalculatorMVC/CalculatorMVC.csproj --configuration Release
