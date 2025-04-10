@@ -1,0 +1,38 @@
+name: Build, Test and Run Calculator
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build solution
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test --configuration Release --no-build --verbosity normal
+
+    # Зауваження:
+    # Виклик Windows Forms додатку (наприклад, dotnet run) зазвичай не відображається
+    # у середовищі GitHub Actions, оскільки це headless runner.
+    # Якщо вам потрібно лише перевірити компіляцію і тестування, то крок запуску додатку можна
+    # не включати або викликати його в спеціальному режимі.
+    - name: Run application (optional)
+      run: dotnet run --project CalculatorMVC/CalculatorMVC.csproj --configuration Release
+      # За замовчуванням цей крок може "зависнути", оскільки GUI додатку не відображається.
