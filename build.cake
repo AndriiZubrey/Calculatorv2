@@ -14,14 +14,14 @@ Task("Restore")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    DotNetRestore("./Calculator.sln");
+    DotNetRestore("./Calculatorv2.sln");
 });
 
 Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
 {
-    DotNetBuild("./Calculator.sln", new DotNetBuildSettings
+    DotNetBuild("./Calculatorv2.sln", new DotNetBuildSettings
     {
         Configuration = configuration
     });
